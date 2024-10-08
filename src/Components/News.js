@@ -151,6 +151,7 @@ export class News extends Component {
     this.state = {
       articles: this.articles,
       loading: false,
+      page:1
     };
   }
 
@@ -170,7 +171,7 @@ export class News extends Component {
 
         <div className="row">
           {this.state.articles.map((element) => {
-            return <div className="col-md-4" key={element.url}>
+            return <div className="col-md-4" >
               <NewsItem 
                 title={element.title.slice(0,40)}
                 description={element.description.slice(0,80)}
@@ -180,6 +181,8 @@ export class News extends Component {
             </div>;
           })}
         </div>
+        <button type="button" class="btn btn-secondary">Previous</button>
+        <button type="button" class="btn btn-secondary">Next</button>
       </div>
     );
   }
